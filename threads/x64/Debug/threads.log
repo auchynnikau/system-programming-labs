@@ -1,4 +1,0 @@
-﻿  readThread.cpp
-C:\Users\User-PC\Desktop\OS\system-programming-labs\threads\readThread.cpp(9,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "HANDLE"
-C:\Users\User-PC\Desktop\OS\system-programming-labs\threads\readThread.cpp(9,12): warning C4313: printf: конфликт "%d" в строке формата с аргументом 1 типа "HANDLE"
-  threads.vcxproj -> C:\Users\User-PC\Desktop\OS\system-programming-labs\threads\x64\Debug\threads.exe
