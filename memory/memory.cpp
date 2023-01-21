@@ -5,57 +5,59 @@
 
 using namespace std;
 
-//struct Students {
-//    string name;
-//    string age;
-//};
-//
-//
-//int main()
-//{
-//    setlocale(LC_ALL, "RUS");
-//
-//    int n = 2;
-//    Students** ArrayStr = (Students**)malloc(n * sizeof(Students*));
-//
-//    if (!ArrayStr)
-//    {
-//        std::cout << "\nНедостаточно памяти";
-//        std::cout << "\nНажмите любую клавишу для завершения программы ...\n";
-//
-//        return 0;
-//    }
-//
-//    std::cout << "Введите имя и возраст: " << std::endl;
-//    for (int i = 0; i < n; i++) {
-//        ArrayStr[i] = (Students*)malloc(n * sizeof(Students));
-//        for (int j = 0; j < n; j++) {
-//            std::cout << "Имя: ";
-//            std::cin >> ArrayStr[i][j].name;
-//            std::cout << "Возраст: ";
-//            std::cin >> ArrayStr[i][j].age;
-//        }
-//    }
-//
-//    int k = 1;
-//
-//    std::cout << "\n№\t" << "Имя\t" << "Возраст\t\n";
-//
-//    for (int i = 0; i < n; i++) {
-//        for (int j = 0; j < n; j++) {
-//            std::cout << "-----------------------------" << std::endl;
-//            std::cout << k << "\t" << ArrayStr[i][j].name << "\t" << ArrayStr[i][j].age << std::endl;
-//            k++;
-//        }
-//    }
-//
-//    free(ArrayStr);
-//    return 0;
-//}
+struct students {
+    string name;
+    string age;
+};
+
+int handleStudents()
+{
+    setlocale(lc_all, "ENG");
+
+    int n = 2;
+
+    students** arraystr = (students**)malloc(n * sizeof(students*));
+
+    if (!arraystr)
+    {
+        std::cout << "\nError! Lack of memory!";
+        std::cout << "\nPress Enter to exit the program...\n";
+
+        return 0;
+    }
+
+    std::cout << "Type name and address: " << std::endl;
+
+    for (int i = 0; i < n; i++) {
+        arraystr[i] = (students*)malloc(n * sizeof(students));
+
+        for (int j = 0; j < n; j++) {
+            std::cout << "Name: ";
+            std::cin >> arraystr[i][j].name;
+            std::cout << "Age: ";
+            std::cin >> arraystr[i][j].age;
+        }
+    }
+
+    int k = 1;
+
+    std::cout << "\n№\t" << "Name\t" << "Age\t\n";
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << "-----------------------------" << std::endl;
+            std::cout << k << "\t" << arraystr[i][j].name << "\t" << arraystr[i][j].age << std::endl;
+            k++;
+        }
+    }
+
+    free(arraystr);
+    return 0;
+}
 
 int main()
 {
-    setlocale(LC_ALL, "RUS");
+    setlocale(LC_ALL, "ENG");
 
     int n = 2;
 
@@ -63,23 +65,24 @@ int main()
 
     if (!str)
     {
-        std::cout << "\nНедостаточно памяти";
-        std::cout << "\nНажмите любую клавишу для завершения программы ...\n";
+        std::cout << "\nError! Lack of memory!";
+        std::cout << "\nPress Enter to exit the program...\n";
 
         return 0;
     }
 
-    std::cout << "Введите строку" << std::endl;
+    std::cout << "Type string: " << std::endl;
     for (int i = 0; i < n; i++) {
         str[i] = new std::string;
         getline(std::cin, *(str[i]));
     }
 
     for (int i = 0; i < n; i++) {
-        std::cout << "Строка №" << i + 1 << ": " << *(str[i]) << std::endl;
+        std::cout << "String: " << i + 1 << ": " << *(str[i]) << std::endl;
     }
 
     free(str);
-    //_getch();
+    _getch();
+
     return 0;
 }
